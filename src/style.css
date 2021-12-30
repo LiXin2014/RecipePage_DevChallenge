@@ -1,0 +1,268 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+}
+
+.container {
+    max-width: 1500px;
+    margin: 0 auto;
+    padding: 50px 100px;
+}
+
+/* style for recipe info on top */
+.recipe-info .recipe-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 48px;
+    margin-bottom: 12px;
+}
+
+.recipe-info .recipe-description {
+    display: flex;
+    margin-bottom: 17px;
+    font-weight: 500;
+    font-size: 14px;
+    width: 70%;
+}
+
+.recipe-info .recipe-description div {
+    font-style: italic;
+}
+
+.recipe-info .recipe-description img {
+    margin-right: 17px;
+    margin-bottom: 2px;
+    align-self: flex-start;
+    margin-top: 5px;
+}
+
+main > img {
+    width: 100%;
+}
+
+/* style for recipe summary card */
+.recipe-summary {
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    padding: 30px 20px;
+
+    float: right;
+    margin: 30px 0px;
+}
+
+.recipe-summary .summary-item {
+    flex: 1;
+    margin: 20px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.recipe-summary .time {
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-summary .summary-item .material-icons {
+    font-size: 30px;
+    margin-right: 10px;
+}
+
+.yields .material-icons, .yields .summary-content {
+    color: #F2994A;
+}
+
+.recipe-summary .summary-item .summary-name {
+    font-weight: bold;
+    font-size: 10px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.recipe-summary .summary-item .summary-content {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+/* style for recipe ingredients */
+.recipe-ingredients-and-instructions {
+    margin: 30px 0px;
+    width: 70%;
+}
+
+.recipe-ingredients, .recipe-instructions {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 32px;
+}
+
+.ingredient-section .section-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 400;
+    font-size: 18px;
+    font-style: italic;
+    margin-bottom: 31px;
+}
+
+.recipe-ingredients-and-instructions ul {
+    list-style: none;
+}
+
+.ingredient-item {
+    margin-bottom: 10px;
+    display: flex;
+    line-height: 25px;
+}
+
+.ingredient-item input[type="checkbox"] {
+    width: 21px;
+    height: 21px;
+    margin-right: 10px;
+
+    flex-shrink: 0;
+}
+
+.ingredient-item div {
+    font-size: 16px;
+}
+
+.ingredient-item div .main-item {
+    font-weight: bold;
+}
+
+.ingredient-item:last-child {
+    margin-bottom: 30px;
+}
+
+/* style for recipe instructions */
+.instruction-item {
+    margin-bottom: 20px;
+    display: flex;
+    line-height: 150%;
+}
+
+.instruction-item .step-number {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 32px;
+    color: white;
+    text-align: center;
+
+    background: #F2994A;
+    border-radius: 6px;
+    margin-right: 10px;
+    
+    height: 36px;
+    width: 36px;
+
+    flex-shrink: 0;
+}
+
+.instruction-item div {
+    font-size: 16px;
+}
+
+.instruction-item div .main-item {
+    font-weight: bold;
+}
+
+.source {
+    line-height: 150%;
+    color: #BDBDBD;
+    font-style: italic;
+}
+
+.source a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* style for footer */
+footer {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    color: #BDBDBD;
+    margin-top: 114px;
+}
+
+footer .created-by {
+    margin: 0 auto;
+    width: fit-content;
+}
+
+footer .author {
+    font-weight: bold;
+    color: #BDBDBD;
+}
+
+@media screen and (max-width: 768px) {
+    .recipe-info .recipe-title {
+        font-size: 24px;
+    }
+
+    .recipe-info .recipe-description {
+        width: 100%;
+    }
+
+    .recipe-description div {
+        font-size: 12px;
+    }
+
+    .recipe-summary {
+        float: none;
+        box-shadow: none;
+        padding: 0px;
+    }
+
+    .recipe-summary .time {
+        flex-direction: row;
+    }
+
+    .recipe-summary .summary-item {
+        margin: 10px 0px;
+    }
+
+    .recipe-summary .summary-item .summary-name {
+        font-size: 8px;
+    }
+
+    .recipe-summary .summary-item .summary-content {
+        font-size: 10px;
+    }
+
+    .recipe-summary .summary-item .material-icons {
+        font-size: 20px;
+    }
+
+    .recipe-ingredients-and-instructions {
+        width: 100%;
+    }
+
+    .recipe-ingredients, .recipe-instructions {
+        font-size: 18px;
+    }
+
+    .ingredient-section .section-name {
+        font-size: 16px;
+    }
+
+    .ingredient-item div {
+        font-size: 14px;
+    }
+}
+
+/* NOTES
+1. In flexbox layout, the width of div or input won't be honored. And we need to use `flex-shrink: 0;` on child item.
+   Try remove `flex-shrink: 0;` on line 168 (for .step-number) and line 131 (for input[type="checkbox"]).
+   Then resizing the window, you will notice the size of checkbox and step number are changing. That is because the flexbox layout is taking effect to position these items.
+*/
